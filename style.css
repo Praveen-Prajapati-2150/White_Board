@@ -1,0 +1,260 @@
+#canvas {
+  border: 1px solid black;
+  position: relative;
+  margin: 0;
+  padding: 0;
+}
+
+/* :root {} */
+
+* {
+  margin: 4px;
+  padding: 0;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  border: 1px solid rgb(0, 0, 0);
+}
+
+body {
+  /* padding: 30px; */
+  overflow: hidden;
+  background-color: rgb(0, 0, 0);
+  display: flex;
+  /* position: absolute; */
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  grid-template-areas: "overlap";
+}
+
+#conta {
+  display: flex;
+  /* flex-direction: column; */
+  justify-content: center;
+  height: 50px;
+  position: absolute;
+  grid-area: overlap;
+  z-index: 100;
+  background-color: white;
+  /* display: block; */
+  /* width: 600px; */
+  /* margin-left: -15rem; */
+  margin: 4px;
+}
+
+canvas {
+  /* box-shadow: 0px 0px 3px rgb(190, 190, 190) ; */
+  grid-area: overlap;
+}
+
+.heading {
+  border: none;
+}
+
+.buttons button {
+  margin: 2px;
+  height: 30px;
+  width: 50px;
+  background-color: transparent;
+  border: 1px solid rgb(0, 0, 0);
+  border-radius: 4px;
+  color: black;
+  background-color: rgb(154, 240, 137);
+  align-self: center;
+}
+
+#hover {
+  height: 30px;
+  width: 30px;
+  border: 1px solid rgb(255, 255, 255);
+  align-self: center;
+}
+
+#input {
+  align-self: center;
+}
+
+.tools {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  margin-top: 1rem;
+}
+
+/* .tools .color-field {
+  height: 40px;
+  width: 40px;
+  min-height: 40px;
+  min-width: 40px;
+  cursor: pointer;
+  display: inline-block;
+  box-sizing: border-box;
+  border-radius: 50%;
+  border: 2px solid white;
+  align-self: center;
+} */
+
+.tools .button {
+  align-self: center;
+  width: 100px;
+  height: 50px;
+  border: 2px solid white;
+  cursor: pointer;
+  color: white;
+  background-color: rgb(0, 0, 0);
+  margin: 0px 10px;
+  border-radius: 5px;
+  font-weight: 800;
+  /* display: block; */
+}
+
+.stroke-color {
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  border: 2px solid rgb(255, 255, 255);
+  /* margin: 0px; */
+}
+
+.color-picker {
+  align-self: center;
+  margin: 0 10px;
+  height: 50px;
+  width: 50px;
+  border-radius: 5px;
+  border: none;
+}
+
+#grid2 {
+  background-size: cover;
+  background-color: red;
+}
+
+.heading h1 {
+  color: brown;
+  font-size: 40px;
+  margin-right: 15em;
+}
+
+.color_conta {
+  margin-top: 13rem;
+  /* margin-left: -2px; */
+  display: none;
+  background-color: white;
+}
+
+.color_conta button {
+  height: 30px;
+  width: 30px;
+  transform: rotate(-75deg);
+  background: linear-gradient(rgb(0, 226, 0), cyan, rgb(0, 211, 0));
+  border-radius: 50%;
+  border: 2px solid white;
+}
+
+.color_conta input {
+  height: 30px;
+  width: 30px;
+  /* border: 1px solid white; */
+  border: none;
+  /* border-radius: 50%; */
+}
+
+#hover:hover .color_conta {
+  display: block;
+}
+
+.bg_color_conta {
+  margin-top: 11rem;
+  /* margin-left: -2px; */
+  background-color: white;
+  display: none;
+}
+
+.bg_color_conta input {
+  height: 30px;
+  width: 30px;
+  /* border: 1px solid white; */
+  border: none;
+  /* border-radius: 50%; */
+}
+
+a:hover .bg_color_conta {
+  display: block;
+}
+
+#shape {
+  height: 30px;
+  width: 50px;
+  background-color: rgb(148, 255, 106);
+  text-align: center;
+  align-self: center;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#texture {
+  height: 30px;
+  width: 50px;
+  background-color: rgb(96, 133, 255);
+}
+
+.shape_conta {
+  display: flex;
+  flex-direction: column;
+  margin-top: 9rem;
+  background-color: white;
+  justify-content: center;
+  align-items: center;
+  display: none;
+  transition: 1s;
+  position: absolute;
+}
+
+.shape_conta button {
+  height: 30px;
+  width: 70px;
+  color: white;
+  background-color: rgb(255, 42, 74);
+}
+
+.shape_conta button:hover {
+  background-color: rgb(255, 139, 156);
+}
+
+#shape:hover .shape_conta {
+  display: block;
+}
+
+.texture_conta {
+  width: 300px;
+  display: none;
+  cursor: pointer;
+  transition: 1s;
+  position: absolute;
+  margin-top: 21rem;
+  margin-right: 1rem;
+}
+
+#texture:hover .texture_conta {
+  display: block;
+  cursor: pointer;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.texture_conta img:hover {
+  transform: scale(1.2);
+}
+
+#eraser {
+  height: 35px;
+  width: 25px;
+  background-color: rgb(0, 144, 192);
+  border-radius: 5px;
+}

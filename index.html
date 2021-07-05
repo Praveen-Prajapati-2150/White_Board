@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+
+    <canvas id="canvas"></canvas>
+
+    <div id="conta">
+
+        <div class="heading">
+            <h1>WhiteBoard</h1>
+        </div>
+        <div class="buttons">
+            <button onclick="Restore()">Undo</button>
+            <!-- <button onclick="Upstore()">Redo</button> -->
+            <button onclick="Clear()" style="background-color: rgb(255, 115, 115);">Clear</button>
+        </div>
+        
+        
+        <a id="hover" onclick="change_color(this)" style="background:red" class="stroke-color">
+            <div class="color_conta">
+                <div onclick="change_color(this)" style="background:red" class="stroke-color"></div>
+                <div onclick="change_color(this)" style="background:blue" class="stroke-color"></div>
+                <div onclick="change_color(this)" style="background: darkorange" class="stroke-color"></div>
+                <button onclick="random()"></button>
+                <input type="color" oninput="stroke_color = this.value" placeholder="Colors">
+            </div>
+        </a>
+        
+        
+        <div id="input">
+            <input type="range" min="1" max="70" oninput="stroke_width = this.value">
+        </div>
+        
+        <a onclick="change_bg_color(this)" style="background:grey" class="stroke-color">
+            <div class="bg_color_conta">
+
+                <div onclick="change_bg_color(this)" style="background:grey" class="stroke-color"></div>
+                <div onclick="change_bg_color(this)" style="background: violet" class="stroke-color"></div>
+                <div onclick="change_bg_color(this)" style="background: rgb(2, 183, 228)" class="stroke-color"></div>
+                <input type="color" oninput="changeColor()" id="colorChoice" placeholder="Colors">
+            </div>
+        </a>
+        
+        <div id="shape">Shape
+            <div class="shape_conta">
+                <button onclick="draw_box(this)">Box</button>
+                <button onclick="draw_Circle(this)">Circle</button>
+                <button onclick="draw_triangle(this)">Triangle</button>
+            </div>
+        </div>
+        
+        <!-- <button onclick="draw_()"  >draw</button> -->
+        
+       <div id="texture">Texture
+           <div class="texture_conta">
+                <button onclick="draw_grid1()">
+                    <img src="./grid1.jpg" alt="" height="80px" width="80px">
+                </button>
+                <button onclick="draw_grid2()">
+                    <img src="./grid2.jpg" alt="" height="80px" width="80px">
+                </button>
+                <button onclick="draw_grid3()">
+                    <img src="./grid3.gif" alt="" height="80px" width="80px">
+                </button>
+                <button onclick="draw_grid4()">
+                    <img src="./grid4.png" alt="" height="80px" width="80px">
+                </button>
+                <button onclick="draw_grid5()">
+                    <img src="./grid5.svg" alt="" height="80px" width="80px">
+                </button>
+                <button onclick="draw_grid6()">
+                    <img src="./grid6.jpg" alt="" height="80px" width="80px">
+                </button>
+                <button onclick="draw_grid7()">
+                    <img src="./grid7.jpg" alt="" height="80px" width="80px">
+                </button>
+                <button onclick="draw_grid8()">
+                    <img src="./grid8.jpg" alt="" height="80px" width="80px">
+                </button>
+           </div>
+       </div>
+        
+        
+        <div id="eraser" onclick="change_color_eraser(this)" class="stroke-color"></div>
+        
+    </div>
+
+    <script src="./index.js"></script>
+</body>
+
+</html>
