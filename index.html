@@ -1,100 +1,203 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="./style.css">
-</head>
+    <link rel="stylesheet" href="./style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link href="/your-path-to-fontawesome/css/all.css" rel="stylesheet" />
+    <script defer src="/your-path-to-fontawesome/js/all.js"></script>
+    <link
+      href="/your-path-to-fontawesome/css/fontawesome.css"
+      rel="stylesheet"
+    />
+    <link href="/your-path-to-fontawesome/css/brands.css" rel="stylesheet" />
+    <link href="/your-path-to-fontawesome/css/solid.css" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="path/to/font-awesome/css/font-awesome.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Shizuru&display=swap"
+      rel="stylesheet"
+    />
+  </head>
 
-<body>
-
+  <body>
     <canvas id="canvas"></canvas>
 
     <div id="conta">
+      <div class="heading">
+        <h1>WhiteBoard</h1>
+      </div>
 
-        <div class="heading">
-            <h1>WhiteBoard</h1>
-        </div>
-        <div class="buttons">
-            <button onclick="Restore()">Undo</button>
-            <!-- <button onclick="Upstore()">Redo</button> -->
-            <button onclick="Clear()" style="background-color: rgb(255, 115, 115);">Clear</button>
-        </div>
-        
-        
-        <a id="hover" onclick="change_color(this)" style="background:red" class="stroke-color">
-            <div class="color_conta">
-                <div onclick="change_color(this)" style="background:red" class="stroke-color"></div>
-                <div onclick="change_color(this)" style="background:blue" class="stroke-color"></div>
-                <div onclick="change_color(this)" style="background: darkorange" class="stroke-color"></div>
-                <button onclick="random()"></button>
-                <input type="color" oninput="stroke_color = this.value" placeholder="Colors">
-            </div>
-        </a>
-        
-        
-        <div id="input">
-            <input type="range" min="1" max="70" oninput="stroke_width = this.value">
-        </div>
-        
-        <a onclick="change_bg_color(this)" style="background:grey" class="stroke-color">
-            <div class="bg_color_conta">
+      <div class="buttons">
+        <button onclick="Restore()">
+          <i
+            class="fa fa-undo"
+            style="font-size: 40px; color: rgb(0, 0, 0)"
+          ></i>
+        </button>
+        <!-- <button onclick="Upstore()">Redo</button> -->
+        <button onclick="Clear()">
+          <i
+            class="fa fa-user"
+            style="font-size: 40px; color: rgb(0, 0, 0)"
+          ></i>
+          <!-- clear -->
+        </button>
+      </div>
 
-                <div onclick="change_bg_color(this)" style="background:grey" class="stroke-color"></div>
-                <div onclick="change_bg_color(this)" style="background: violet" class="stroke-color"></div>
-                <div onclick="change_bg_color(this)" style="background: rgb(2, 183, 228)" class="stroke-color"></div>
-                <input type="color" oninput="changeColor()" id="colorChoice" placeholder="Colors">
-            </div>
-        </a>
-        
-        <div id="shape">Shape
-            <div class="shape_conta">
-                <button onclick="draw_box(this)">Box</button>
-                <button onclick="draw_Circle(this)">Circle</button>
-                <button onclick="draw_triangle(this)">Triangle</button>
-            </div>
+      <a id="brush" onclick="change_color(this)" class="stroke-color">
+        <i
+          class="fa fa-paint-brush"
+          style="font-size: 40px; color: rgb(255, 0, 0)"
+        ></i>
+        <div class="brush_color">
+          <div
+            onclick="change_color(this)"
+            style="background: rgb(91, 255, 59)"
+            class="stroke-color"
+          ></div>
+          <div
+            onclick="change_color(this)"
+            style="background: rgb(104, 104, 255)"
+            class="stroke-color"
+          ></div>
+          <div
+            onclick="change_color(this.value)"
+            style="background: rgb(255, 151, 25)"
+            class="stroke-color"
+          ></div>
+          <!-- <button onclick="random()"></button> -->
+          <input
+            type="color"
+            oninput="stroke_color = this.value"
+            placeholder="Colors"
+          />
         </div>
-        
-        <!-- <button onclick="draw_()"  >draw</button> -->
-        
-       <div id="texture">Texture
-           <div class="texture_conta">
-                <button onclick="draw_grid1()">
-                    <img src="./grid1.jpg" alt="" height="80px" width="80px">
-                </button>
-                <button onclick="draw_grid2()">
-                    <img src="./grid2.jpg" alt="" height="80px" width="80px">
-                </button>
-                <button onclick="draw_grid3()">
-                    <img src="./grid3.gif" alt="" height="80px" width="80px">
-                </button>
-                <button onclick="draw_grid4()">
-                    <img src="./grid4.png" alt="" height="80px" width="80px">
-                </button>
-                <button onclick="draw_grid5()">
-                    <img src="./grid5.svg" alt="" height="80px" width="80px">
-                </button>
-                <button onclick="draw_grid6()">
-                    <img src="./grid6.jpg" alt="" height="80px" width="80px">
-                </button>
-                <button onclick="draw_grid7()">
-                    <img src="./grid7.jpg" alt="" height="80px" width="80px">
-                </button>
-                <button onclick="draw_grid8()">
-                    <img src="./grid8.jpg" alt="" height="80px" width="80px">
-                </button>
-           </div>
-       </div>
-        
-        
-        <div id="eraser" onclick="change_color_eraser(this)" class="stroke-color"></div>
-        
+      </a>
+
+      <div id="input">
+        <input
+          type="range"
+          min="1"
+          max="50"
+          oninput="stroke_width = this.value"
+        />
+      </div>
+
+      <a
+        onclick="change_bg_color(this)"
+        style="background: grey"
+        class="stroke-color"
+      >
+        <img src="http://cdn.onlinewebfonts.com/svg/img_98042.png" alt="" />
+        <div class="bg_color_conta">
+          <div
+            onclick="change_bg_color(this)"
+            style="background: grey"
+            class="stroke-color"
+          ></div>
+          <div
+            onclick="change_bg_color(this)"
+            style="background: violet"
+            class="stroke-color"
+          ></div>
+          <div
+            onclick="change_bg_color(this)"
+            style="background: rgb(2, 183, 228)"
+            class="stroke-color"
+          ></div>
+          <button class="random_bg" onclick="random()"></button>
+          <input
+            type="color"
+            oninput="changeColor()"
+            id="colorChoice"
+            value="#ff0000"
+            placeholder="Colors"
+          />
+        </div>
+      </a>
+
+      <div id="shape">
+        <img
+          src="https://d1nhio0ox7pgb.cloudfront.net/_img/o_collection_png/green_dark_grey/512x512/plain/shapes.png"
+          alt=""
+        />
+        <!-- Shape -->
+        <div class="shape_conta">
+          <button onclick="draw_box(this)">Box</button>
+          <button onclick="draw_Circle(this)">Circle</button>
+          <button onclick="draw_triangle(this)">Triangle</button>
+        </div>
+      </div>
+
+      <!-- <button onclick="draw_()"  >draw</button> -->
+
+      <div id="texture">
+        <img
+          src="https://cdn2.iconfinder.com/data/icons/budicon-chroma-photography/24/texture-512.png"
+          alt=""
+        />
+        <!-- Texture -->
+        <div class="texture_conta">
+          <button onclick="draw_grid1()">
+            <img src="./grid1.jpg" alt="" height="80px" width="80px" />
+          </button>
+          <button onclick="draw_grid2()">
+            <img src="./grid2.jpg" alt="" height="80px" width="80px" />
+          </button>
+          <button onclick="draw_grid3()">
+            <img src="./grid3.gif" alt="" height="80px" width="80px" />
+          </button>
+          <button onclick="draw_grid4()">
+            <img src="./grid4.png" alt="" height="80px" width="80px" />
+          </button>
+          <button onclick="draw_grid5()">
+            <img src="./grid8.jpg" alt="" height="80px" width="80px" />
+          </button>
+          <button onclick="draw_grid6()">
+            <img src="./grid6.jpg" alt="" height="80px" width="80px" />
+          </button>
+          <button onclick="draw_grid7()">
+            <img src="./grid7.jpg" alt="" height="80px" width="80px" />
+          </button>
+          <button onclick="draw_grid8()">
+            <img src="./grid5.svg" alt="" height="80px" width="80px" />
+          </button>
+        </div>
+      </div>
+
+      <div id="eraser" onclick="change_color_eraser(this)" class="stroke-color">
+        <img
+          src="https://www.pinclipart.com/picdir/big/57-575938_britney-a7-design-your-own-challenge-japanese-classroom.png"
+          alt=""
+        />
+      </div>
     </div>
 
     <script src="./index.js"></script>
-</body>
-
+    <script src="http://jscolor.com/release/2.0/jscolor-2.0.4/jscolor.js%22%3E"></script>
+  </body>
 </html>
+
+<!-- <style contenteditable="true">
+    body{
+        background-color: lightcoral;
+    }
+    style{
+        display: block;
+    }
+</style> -->

@@ -1,14 +1,14 @@
-let canvas = document.getElementById("canvas");
+let canvas = document.getElementById('canvas');
 canvas.width = window.innerWidth * 1.0;
 canvas.height = window.innerHeight * 1.0;
-let context = canvas.getContext("2d");
-context.fillStyle = "white";
+let context = canvas.getContext('2d');
+context.fillStyle = 'white';
 context.fillRect(0, 0, canvas.width, canvas.height);
 let restore_array = [];
 let upstore_array = [];
 let start_index = -1;
-let stroke_color = "black";
-let stroke_width = "2";
+let stroke_color = 'red';
+let stroke_width = '2';
 let is_drawing = false;
 
 function change_color(element) {
@@ -36,8 +36,8 @@ function draw(event) {
     context.lineTo(getX(event), getY(event));
     context.strokeStyle = stroke_color;
     context.lineWidth = stroke_width;
-    context.lineCap = "round";
-    context.lineJoin = "round";
+    context.lineCap = 'round';
+    context.lineJoin = 'round';
     context.stroke();
   }
   event.preventDefault();
@@ -72,13 +72,13 @@ function getY(event) {
   }
 }
 
-canvas.addEventListener("touchstart", start, false);
-canvas.addEventListener("touchmove", draw, false);
-canvas.addEventListener("touchend", stop, false);
-canvas.addEventListener("mousedown", start, false);
-canvas.addEventListener("mousemove", draw, false);
-canvas.addEventListener("mouseup", stop, false);
-canvas.addEventListener("mouseout", stop, false);
+canvas.addEventListener('touchstart', start, false);
+canvas.addEventListener('touchmove', draw, false);
+canvas.addEventListener('touchend', stop, false);
+canvas.addEventListener('mousedown', start, false);
+canvas.addEventListener('mousemove', draw, false);
+canvas.addEventListener('mouseup', stop, false);
+canvas.addEventListener('mouseout', stop, false);
 
 let aa = 0;
 function Restore() {
@@ -87,7 +87,7 @@ function Restore() {
   } else {
     start_index += -1;
     aa += -1;
-    if (event.type != "mouseout") {
+    if (event.type != 'mouseout') {
       context.putImageData(restore_array[start_index], 0, 0);
     }
   }
@@ -102,6 +102,9 @@ function Restore() {
 //   const lastMemento = upstore_array.pop()
 //   context.putImageData(restore_array[start_index], 0, 0) = lastMemento ? lastMemento : (context.putImageData(restore_array[start_index], 0, 0))
 // }
+{
+  /* <script src="http://jscolor.com/release/2.0/jscolor-2.0.4/jscolor.js%22%3E"></script>; */
+}
 
 function Clear() {
   // context.fillStyle = "white";
@@ -120,7 +123,7 @@ function change_bg_color(element) {
 }
 
 function changeColor() {
-  document.getElementById("colorChoice").addEventListener("change", (e) => {
+  document.getElementById('colorChoice').addEventListener('change', (e) => {
     // let color = e.target.value;
     context.fillStyle = e.target.value;
     context.fillRect(0, 0, canvas.width, canvas.height);
@@ -130,7 +133,7 @@ function changeColor() {
 changeColor();
 
 //////////////////////////////////////////////////////////////
-// Filllng shapes in canvas
+// Filling shapes in canvas
 
 // fillRect(x, y, width, height)
 //   Draws a filled rectangle.
@@ -155,12 +158,12 @@ function draw_triangle() {
 }
 
 function draw_box(element) {
-  console.log("fill");
+  console.log('fill');
 
   // context.fillRect(100, 100, 100, 100);
   // context.clearRect(45, 45, canvas.width/2, canvas.height/2);
   // context.clearRect(25, 25, 100, 100);
-  context.strokeRect(canvas.width/2 -150, canvas.height/2 - 150, 300, 300);
+  context.strokeRect(canvas.width / 2 - 150, canvas.height / 2 - 150, 300, 300);
 
   // let color = context.fillStyle;
   // context.fillStyle = element.style.background;
@@ -215,10 +218,10 @@ function draw_grid1() {
   // var context = document.getElementById('canvas').getContext('2d');
   // create new image object to use as pattern
   let img = new Image();
-  img.src = "grid1.jpg";
+  img.src = 'grid1.jpg';
   img.onload = function () {
     // create pattern
-    let ptrn = context.createPattern(img, "repeat");
+    let ptrn = context.createPattern(img, 'repeat');
     context.fillStyle = ptrn;
     context.fillRect(0, 0, canvas.width, canvas.height);
   };
@@ -226,57 +229,57 @@ function draw_grid1() {
 
 function draw_grid2() {
   let img = new Image();
-  img.src = "./grid2.jpg";
+  img.src = './grid2.jpg';
   img.onload = function () {
-    context.fillStyle = context.createPattern(img, "repeat");
+    context.fillStyle = context.createPattern(img, 'repeat');
     context.fillRect(0, 0, canvas.width, canvas.height);
   };
 }
 function draw_grid3() {
   let img = new Image();
-  img.src = "./grid3.gif";
+  img.src = './grid3.gif';
   img.onload = function () {
-    context.fillStyle = context.createPattern(img, "repeat");
+    context.fillStyle = context.createPattern(img, 'repeat');
     context.fillRect(0, 0, canvas.width, canvas.height);
   };
 }
 function draw_grid4() {
   let img = new Image();
-  img.src = "./grid4.png";
+  img.src = './grid4.png';
   img.onload = function () {
-    context.fillStyle = context.createPattern(img, "repeat");
+    context.fillStyle = context.createPattern(img, 'repeat');
     context.fillRect(0, 0, canvas.width, canvas.height);
   };
 }
 function draw_grid5() {
   let img = new Image();
-  img.src = "./grid5.svg";
+  img.src = './grid5.svg';
   img.onload = function () {
-    context.fillStyle = context.createPattern(img, "repeat");
+    context.fillStyle = context.createPattern(img, 'repeat');
     context.fillRect(0, 0, canvas.width, canvas.height);
   };
 }
 function draw_grid6() {
   let img = new Image();
-  img.src = "./grid6.jpg";
+  img.src = './grid6.jpg';
   img.onload = function () {
-    context.fillStyle = context.createPattern(img, "repeat");
+    context.fillStyle = context.createPattern(img, 'repeat');
     context.fillRect(0, 0, canvas.width, canvas.height);
   };
 }
 function draw_grid7() {
   let img = new Image();
-  img.src = "./grid7.jpg";
+  img.src = './grid7.jpg';
   img.onload = function () {
-    context.fillStyle = context.createPattern(img, "repeat");
+    context.fillStyle = context.createPattern(img, 'repeat');
     context.fillRect(0, 0, canvas.width, canvas.height);
   };
 }
 function draw_grid8() {
   let img = new Image();
-  img.src = "./grid8.jpg";
+  img.src = './grid8.jpg';
   img.onload = function () {
-    context.fillStyle = context.createPattern(img, "repeat");
+    context.fillStyle = context.createPattern(img, 'repeat');
     context.fillRect(0, 0, canvas.width, canvas.height);
   };
 }
@@ -291,20 +294,19 @@ function random() {
   );
 
   // Add three color stops
-  gradient.addColorStop(0, "green");
-  gradient.addColorStop(0.5, "cyan");
-  gradient.addColorStop(1, "green");
+  gradient.addColorStop(0, 'green');
+  gradient.addColorStop(0.5, 'pink');
+  gradient.addColorStop(1, 'green');
 
   // Set the fill style and draw a rectangle
   context.fillStyle = gradient;
   // context.fillRect(20, 20, 200, 100);
-  context.fillRect(0, 0, canvas.width, canvas.height);
-  console.log("hello");
+  // context.fillRect(0, 0, canvas.width, canvas.height);
+  console.log('hello');
 }
 
-
-
 //////////////////////// ////////////////////////////////////////////////////
+
 // To get text input in canvas
 
 // variable to store mouse x and y positions
@@ -315,9 +317,9 @@ let startingX = 0;
 // A function called when mouse clicked on canvas
 
 canvas.addEventListener(
-  "click",
+  'click',
   function (e) {
-    console.log("called");
+    console.log('called');
     mouseX = e.pageX - canvas.offsetLeft;
     mouseY = e.pageY - canvas.offsetTop;
     startingX = mouseX;
@@ -335,12 +337,12 @@ canvas.addEventListener(
 
 // Add keydown event to document
 document.addEventListener(
-  "keydown",
+  'keydown',
   function (e) {
     // Set context font
-    context.font = "bold 16px Arial";
-    canvas.shadowColor = "rgba(0, 0, 0, 0.7)";
-    context.fillStyle = "#435a6b";
+    context.font = 'bold 16px Arial';
+    canvas.shadowColor = 'rgba(0, 0, 0, 0.7)';
+    context.fillStyle = '#435a6b';
 
     // random_msg = "I am just text the app"
     // context.fillText("random_msg", 50, 50);
@@ -420,27 +422,6 @@ document.addEventListener(
 // canvas.addEventListener("mousemove", draw, false);
 // canvas.addEventListener("mouseup", stop, false);
 // canvas.addEventListener("mouseout", stop, false);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 /////////////////////////////////////////////////////////////////
 
